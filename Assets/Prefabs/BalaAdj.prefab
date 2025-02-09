@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4537513406873307829}
   - component: {fileID: 3201974096023871420}
   m_Layer: 7
-  m_Name: Bala
+  m_Name: BalaAdj
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 512b95b8b22e741f0a94392e0c150c44, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6230838e9594589499494b5437daf2ee, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

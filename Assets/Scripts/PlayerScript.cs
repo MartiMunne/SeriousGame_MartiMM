@@ -12,6 +12,9 @@ public class PlayerScript : MonoBehaviour
     //Movimiento
     public float speed;
 
+    //Disparo
+    public Transform balaInstantiate;
+
     void Awake()
     {
         playerSprite = GetComponent<SpriteRenderer>();
@@ -74,6 +77,36 @@ public class PlayerScript : MonoBehaviour
         if (lapizActual >= 6)
         {
             lapizActual = 1;
+        }
+
+        //Disparo
+        if (Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("Fire1"))
+        {
+            if (lapizActual == 1)
+            {
+                GameObject bala = BalasPool.InstancePool.RequestBala(1);
+                bala.transform.position = balaInstantiate.position;
+            }
+            if (lapizActual == 2)
+            {
+                GameObject bala = BalasPool.InstancePool.RequestBala(2);
+                bala.transform.position = balaInstantiate.position;
+            }
+            if (lapizActual == 3)
+            {
+                GameObject bala = BalasPool.InstancePool.RequestBala(3);
+                bala.transform.position = balaInstantiate.position;
+            }
+            if (lapizActual == 4)
+            {
+                GameObject bala = BalasPool.InstancePool.RequestBala(4);
+                bala.transform.position = balaInstantiate.position;
+            }
+            if (lapizActual == 5)
+            {
+                GameObject bala = BalasPool.InstancePool.RequestBala(5);
+                bala.transform.position = balaInstantiate.position;
+            }
         }
     }
     private void FixedUpdate() 
