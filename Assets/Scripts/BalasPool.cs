@@ -33,7 +33,7 @@ public class BalasPool : MonoBehaviour
         AddBalasToPool();
     }
 
-    //Añadir las balas a la pool
+    //Anadir las balas a la pool
     private void AddBalasToPool() 
     {
         //Por cada espacio de la lista balaPrefabs(5 en total) pone 4 balas del tipo correspondiente en la lista
@@ -49,16 +49,16 @@ public class BalasPool : MonoBehaviour
         }
     }
 
-    //Cuando se dispare se generará una bala de diferente tipo dependiendo del lápiz actual
+    //Cuando se dispare se generara una bala de diferente tipo dependiendo del lapiz actual
     public GameObject RequestBala(int tipoBala) 
     {
-        //Si el tipo de bala es menos de 1 o más de 5, no devuelve nada
+        //Si el tipo de bala es menos de 1 o mas de 5, no devuelve nada
         if (tipoBala < 1 || tipoBala > balaPrefabs.Count)
         {
             return null;
         }
 
-        //Calcula el rango de posición en la lista del tipo de bala requerido
+        //Calcula el rango de posicion en la lista del tipo de bala requerido
         int startIndex = (tipoBala - 1) * poolSizePorTipo;
         int endIndex = startIndex + poolSizePorTipo;
 
