@@ -473,7 +473,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rangoX: 6.5
   posY: 6
-  generateTime: 3
+  generateTime: 2
   actualTime: 0
   wordTipo: 0
   wordChoose: 0
@@ -945,9 +945,9 @@ MonoBehaviour:
   _sprites:
   - {fileID: 21300000, guid: 04f4e50f1b8e44b84bacc70b8f9c2c1c, type: 3}
   - {fileID: 21300000, guid: 4cfb488bd493241f0a442a5475fffb09, type: 3}
-  - {fileID: 21300000, guid: 5e9bedba359b3467d9a6c8da8d71039a, type: 3}
-  - {fileID: 21300000, guid: 7bf4aa04c903f4a28bc677b4aa0bc873, type: 3}
-  - {fileID: 21300000, guid: 2d47288af5ff5455c8ccf35ca9794aa5, type: 3}
+  - {fileID: 21300000, guid: 06f8bf1c6d816cc4288f455f59bacd85, type: 3}
+  - {fileID: 21300000, guid: 734be1abbd74aa94eba942a2256781fb, type: 3}
+  - {fileID: 21300000, guid: f433c721f0a5c864887387628d47383e, type: 3}
   speed: 15
   balaInstantiate: {fileID: 138593565}
 --- !u!212 &1772512296
