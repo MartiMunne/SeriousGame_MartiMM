@@ -260,3 +260,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wordSpeed: 3
   rbWord: {fileID: 7831758693241676273}
+  balaTag: Adj

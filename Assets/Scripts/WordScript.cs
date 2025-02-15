@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class VerbScript : MonoBehaviour
+public class WordScript : MonoBehaviour
 {
     [SerializeField] private float wordSpeed = 3f;
     [SerializeField] private Rigidbody2D rbWord;
+    [SerializeField] private string balaTag;
 
     private void OnEnable()
     {
@@ -14,9 +15,10 @@ public class VerbScript : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D col) 
     {
-        if(col.gameObject.tag == "Verb")
+        if(col.gameObject.tag == balaTag)
         {
             gameObject.SetActive(false);
+            GameManager.gameManager.SumarPuntos(1);
         }
         if(col.gameObject.tag == "WordLimit")
         {

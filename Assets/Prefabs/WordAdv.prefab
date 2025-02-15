@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1013374450811680942}
   - component: {fileID: 8733906891460508399}
   - component: {fileID: 7831758693241676273}
-  - component: {fileID: 789079082059049248}
+  - component: {fileID: 4361326144712471714}
   m_Layer: 10
   m_Name: WordAdv
   m_TagString: Untagged
@@ -246,7 +246,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 5
---- !u!114 &789079082059049248
+--- !u!114 &4361326144712471714
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -255,8 +255,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 2490889083179577600}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8515e59762f42491289217af62d17714, type: 3}
+  m_Script: {fileID: 11500000, guid: b97ca4bb5066a42ca80e1a37f5beba04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   wordSpeed: 3
   rbWord: {fileID: 7831758693241676273}
+  balaTag: Adv

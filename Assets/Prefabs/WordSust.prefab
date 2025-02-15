@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 6012852811751003033}
   - component: {fileID: 1013374450811680942}
   - component: {fileID: 8733906891460508399}
-  - component: {fileID: 2962393520961951731}
   - component: {fileID: 7831758693241676273}
+  - component: {fileID: -5075527348569852801}
   m_Layer: 10
   m_Name: WordSust
   m_TagString: Untagged
@@ -219,20 +219,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 4.8910546, y: 1.2133803}
   m_EdgeRadius: 0
---- !u!114 &2962393520961951731
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2490889083179577600}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c01c1e7df6a2d4216b9d8ea62f11d763, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  wordSpeed: 3
-  rbWord: {fileID: 7831758693241676273}
 --- !u!50 &7831758693241676273
 Rigidbody2D:
   serializedVersion: 4
@@ -260,3 +246,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 5
+--- !u!114 &-5075527348569852801
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2490889083179577600}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b97ca4bb5066a42ca80e1a37f5beba04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wordSpeed: 3
+  rbWord: {fileID: 7831758693241676273}
+  balaTag: Sust
