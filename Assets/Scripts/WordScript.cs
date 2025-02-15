@@ -7,7 +7,6 @@ public class WordScript : MonoBehaviour
     [SerializeField] private float wordSpeed = 3f;
     [SerializeField] private Rigidbody2D rbWord;
     [SerializeField] private string balaTag;
-
     private void OnEnable()
     {
         rbWord.velocity = Vector2.down * wordSpeed;
@@ -23,6 +22,7 @@ public class WordScript : MonoBehaviour
         if(col.gameObject.tag == "WordLimit")
         {
             gameObject.SetActive(false);
+            SceneManaging.sceneManaging.Lose();
         }
     }
 }

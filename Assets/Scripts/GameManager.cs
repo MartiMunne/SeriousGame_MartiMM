@@ -25,14 +25,13 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        if(GameManager.gameManager != null && GameManager.gameManager != this)
+        if (gameManager == null)
         {
-            Destroy(gameObject);
+            gameManager = this;
         }
         else
         {
-            GameManager.gameManager = this;
-            DontDestroyOnLoad(gameObject);
+            Destroy(gameObject);
         }
     }
 
@@ -42,8 +41,8 @@ public class GameManager : MonoBehaviour
 
         if(actualTime >= generateTime)
         {
-            wordTipo = Random.Range(1,5);
-            int wordChoose_ = Random.Range(1,10);
+            wordTipo = Random.Range(1,6);
+            int wordChoose_ = Random.Range(1,11);
             wordChoose = wordChoose_ - 1;
             float posX = Random.Range(-rangoX, rangoX);
             GameObject word = WordsPool.InstancePool.RequestWord(wordTipo);
