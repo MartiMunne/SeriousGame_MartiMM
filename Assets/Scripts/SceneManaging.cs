@@ -9,6 +9,9 @@ public class SceneManaging : MonoBehaviour
     [SerializeField] private GameObject MainMenuUI;
     [SerializeField] private GameObject HowToPlayUI;
     [SerializeField] private GameObject LoseUI;
+    [SerializeField] private AudioSource audioBlackboard;
+    [SerializeField] private AudioSource musicGame;
+    [SerializeField] private AudioSource audioLose;
 
     //Sonidos y musica
     [SerializeField] private AudioSource audioBlackboard;
