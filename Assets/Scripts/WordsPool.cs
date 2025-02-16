@@ -10,7 +10,7 @@ public class WordsPool : MonoBehaviour
     [SerializeField] private List<GameObject> wordsList;
     private GameObject word;
 
-    //Instance pool
+    //Instance
     private static WordsPool instancePool;
     public static WordsPool InstancePool { get { return instancePool; } }
 

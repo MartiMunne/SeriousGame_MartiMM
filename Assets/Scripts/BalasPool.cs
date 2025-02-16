@@ -10,7 +10,7 @@ public class BalasPool : MonoBehaviour
     [SerializeField] private List<GameObject> balasList;
     private GameObject bala;
 
-    //Instance pool
+    //Instance
     private static BalasPool instancePool;
     public static BalasPool InstancePool { get { return instancePool; } }
 

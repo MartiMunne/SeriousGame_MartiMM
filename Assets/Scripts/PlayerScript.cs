@@ -14,6 +14,7 @@ public class PlayerScript : MonoBehaviour
 
     //Disparo
     public Transform balaInstantiate;
+    [SerializeField] private AudioSource audioShoot;
 
     void Awake()
     {
@@ -82,6 +83,9 @@ public class PlayerScript : MonoBehaviour
         //Disparo
         if (Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("Fire1"))
         {
+            audioShoot.Play();
+
+            //Dependiendo del lapiz actual se dispara un tipo de bala distinto
             if (lapizActual == 1)
             {
                 GameObject bala = BalasPool.InstancePool.RequestBala(1);
@@ -109,8 +113,10 @@ public class PlayerScript : MonoBehaviour
             }
         }
     }
+
     private void FixedUpdate() 
     {
+        //Mueve el lapiz hacia los lados a la velocidad establecida
         float moveX = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
         transform.Translate(moveX, 0, 0);
     }
