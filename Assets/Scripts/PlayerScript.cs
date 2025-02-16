@@ -14,6 +14,7 @@ public class PlayerScript : MonoBehaviour
 
     //Disparo
     public Transform balaInstantiate;
+    [SerializeField] private AudioSource audioShoot;
 
     void Awake()
     {
@@ -82,6 +83,7 @@ public class PlayerScript : MonoBehaviour
         //Disparo
         if (Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("Fire1"))
         {
+            audioShoot.Play();
             if (lapizActual == 1)
             {
                 GameObject bala = BalasPool.InstancePool.RequestBala(1);
