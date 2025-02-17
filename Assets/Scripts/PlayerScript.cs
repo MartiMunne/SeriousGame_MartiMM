@@ -84,11 +84,8 @@ public class PlayerScript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("Fire1"))
         {
             audioShoot.Play();
-<<<<<<< HEAD
 
             //Dependiendo del lapiz actual se dispara un tipo de bala distinto
-=======
->>>>>>> origin/main
             if (lapizActual == 1)
             {
                 GameObject bala = BalasPool.InstancePool.RequestBala(1);

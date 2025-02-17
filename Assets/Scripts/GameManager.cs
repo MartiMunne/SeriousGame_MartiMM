@@ -27,6 +27,9 @@ public class GameManager : MonoBehaviour
     //Contador de puntos
     public int puntosActual;
     [SerializeField] private TMP_Text puntosNumber;
+    public int recordActual;
+    [SerializeField] private TMP_Text recordNumber;
+    [SerializeField] private GameObject newRecordText;
 
     //Instance
     private void Awake()
@@ -40,13 +43,18 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    private void Start() 
+    {
+        LoadRecord();
+        recordNumber.text = recordActual.ToString();
+    }
 
     void Update()
     {
         //El tiempo actual aumenta mediante pasa el tiempo
         actualTime += Time.deltaTime;
 
-        //Si el tiempo actual iguala al tiempo de generación, spawnea una palabra
+        //Si el tiempo actual iguala al tiempo de generacion, spawnea una palabra
         if(actualTime >= generateTime)
         {
             //Genera un numero aleatorio para elegir el tipo de palabra y la palabra que aparecera
@@ -89,20 +97,41 @@ public class GameManager : MonoBehaviour
 
     public void SumarPuntos(int puntos) 
     {
-        //Suma una cantidad de puntos indicada al llamar a la función y la escribe en la UI
+        //Suma una cantidad de puntos indicada al llamar a la funcion y la escribe en la UI
         puntosActual += puntos;
         puntosNumber.text = puntosActual.ToString();
 
-        //Cada vez que los puntos aumentan en 5 reducen el tiempo de generación en 0.2
+        //Cada vez que los puntos aumentan en 5 reducen el tiempo de generaciï¿½n en 0.2
         if (puntosActual % 5 == 0)
         {
             generateTime -= 0.2f;
         }
 
-        //Evita que el tiempo de generación baje de 1 segundo
+        //Evita que el tiempo de generacion baje de 1 segundo
         if(generateTime <= 1f) 
         {
             generateTime = 1f;
         }
+
+        if(puntosActual > recordActual)
+        {
+            recordActual = puntosActual;
+            recordNumber.text = recordActual.ToString();
+            newRecordText.SetActive(true);
+            SaveRecord();
+        }
+    }
+
+    public void SaveRecord()
+    {
+        PlayerPrefs.SetInt("Record", recordActual);
+        PlayerPrefs.Save();
+        Debug.Log("Record Saved");
+    }
+
+    public void LoadRecord()
+    {
+        recordActual = PlayerPrefs.GetInt("Record", recordActual);
+        Debug.Log("Record Loaded");
     }
 }

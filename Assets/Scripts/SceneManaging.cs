@@ -9,9 +9,8 @@ public class SceneManaging : MonoBehaviour
     [SerializeField] private GameObject MainMenuUI;
     [SerializeField] private GameObject HowToPlayUI;
     [SerializeField] private GameObject LoseUI;
-    [SerializeField] private AudioSource audioBlackboard;
-    [SerializeField] private AudioSource musicGame;
-    [SerializeField] private AudioSource audioLose;
+    [SerializeField] private GameObject LoseOverlay;
+
 
     //Sonidos y musica
     [SerializeField] private AudioSource audioBlackboard;
@@ -35,11 +34,11 @@ public class SceneManaging : MonoBehaviour
 
     private void Start()
     {
-        //Iniciar el tiempo (Por si se abre después de parar-lo al perder el juego)
+        //Iniciar el tiempo (Por si se abre despuï¿½s de parar-lo al perder el juego)
         Time.timeScale = 1f;
     }
 
-    //Botón para activar el menú de Como Jugar
+    //Boton para activar el menï¿½ de Como Jugar
     public void ToHowToPlayMenu() 
     { 
         MainMenuUI.SetActive(false);
@@ -47,7 +46,7 @@ public class SceneManaging : MonoBehaviour
         audioBlackboard.Play();
     }
 
-    //Botón para activar el menú de Main Menu
+    //Boton para activar el menï¿½ de Main Menu
     public void ToMainMenu()
     {
         MainMenuUI.SetActive(true);
@@ -55,13 +54,13 @@ public class SceneManaging : MonoBehaviour
         audioBlackboard.Play();
     }
 
-    //Botón para activar la escena Game
+    //Boton para activar la escena Game
     public void PlayButton() 
     {
         SceneManager.LoadScene(1);   
     }
 
-    //Botón para salir del juego (O parar el modo Play en el editor)
+    //Boton para salir del juego (O parar el modo Play en el editor)
     public void ExitButton() 
     {
         audioBlackboard.Play();
@@ -76,11 +75,12 @@ public class SceneManaging : MonoBehaviour
     {
         musicGame.Pause();
         Time.timeScale = 0f;
+        LoseOverlay.SetActive(true);
         LoseUI.SetActive(true);
         audioLose.Play();
     }
 
-    //Botón para activar la escena Main Menu
+    //Botï¿½n para activar la escena Main Menu
     public void MenuButton() 
     {
         SceneManager.LoadScene(0);
