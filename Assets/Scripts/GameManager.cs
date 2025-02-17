@@ -30,6 +30,7 @@ public class GameManager : MonoBehaviour
     public int recordActual;
     [SerializeField] private TMP_Text recordNumber;
     [SerializeField] private GameObject newRecordText;
+    [SerializeField] private GameObject hardcoreText;
 
     //Instance
     private void Awake()
@@ -101,18 +102,26 @@ public class GameManager : MonoBehaviour
         puntosActual += puntos;
         puntosNumber.text = puntosActual.ToString();
 
-        //Cada vez que los puntos aumentan en 5 reducen el tiempo de generaci�n en 0.2
+        //Cada vez que los puntos aumentan en 5 reducen el tiempo de generacion en 0.2
         if (puntosActual % 5 == 0)
         {
             generateTime -= 0.2f;
         }
 
-        //Evita que el tiempo de generacion baje de 1 segundo
-        if(generateTime <= 1f) 
+        //Evita que el tiempo de generacion baje de 1 segundo por debajo de 50 puntos
+        if(generateTime <= 1f && puntosActual <= 50) 
         {
             generateTime = 1f;
         }
 
+        //Baja el tiempo de generacion a 0.7 si se pasan los 50 puntos
+        if(generateTime <= 1f && puntosActual >= 50)
+        {
+            generateTime = 0.7f;
+            hardcoreText.SetActive(true);
+        }
+
+        //Actualiza el record si este se supera
         if(puntosActual > recordActual)
         {
             recordActual = puntosActual;
@@ -122,6 +131,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    //Guarda el valor del record
     public void SaveRecord()
     {
         PlayerPrefs.SetInt("Record", recordActual);
@@ -129,6 +139,7 @@ public class GameManager : MonoBehaviour
         Debug.Log("Record Saved");
     }
 
+    //Carga el valor del record
     public void LoadRecord()
     {
         recordActual = PlayerPrefs.GetInt("Record", recordActual);

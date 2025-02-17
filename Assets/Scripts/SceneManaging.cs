@@ -34,11 +34,11 @@ public class SceneManaging : MonoBehaviour
 
     private void Start()
     {
-        //Iniciar el tiempo (Por si se abre despu�s de parar-lo al perder el juego)
+        //Iniciar el tiempo (Por si se abre despues de parar-lo al perder el juego)
         Time.timeScale = 1f;
     }
 
-    //Boton para activar el men� de Como Jugar
+    //Boton para activar el menu de Como Jugar
     public void ToHowToPlayMenu() 
     { 
         MainMenuUI.SetActive(false);
@@ -46,7 +46,7 @@ public class SceneManaging : MonoBehaviour
         audioBlackboard.Play();
     }
 
-    //Boton para activar el men� de Main Menu
+    //Boton para activar el menu de Main Menu
     public void ToMainMenu()
     {
         MainMenuUI.SetActive(true);
@@ -80,7 +80,7 @@ public class SceneManaging : MonoBehaviour
         audioLose.Play();
     }
 
-    //Bot�n para activar la escena Main Menu
+    //Boton para activar la escena Main Menu
     public void MenuButton() 
     {
         SceneManager.LoadScene(0);
